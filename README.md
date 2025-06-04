@@ -34,13 +34,39 @@ Then open your browser and navigate to http://localhost:4200/.
 
 ## Technologies Used
 
-- Angular 19.2.12: Front-end framework
-- TypeScript: Programming language
-- HTML/CSS: Structure and styling
-- Local Storage API: Data persistence
-- Angular Forms: Form handling with two-way binding
+- 🅰️ **Angular 19.2.12**: Front-end framework
+- 🟦 **TypeScript**: Programming language
+- 🌐 **HTML/CSS**: Structure and styling
+- 💾 **Local Storage API**: Data persistence
+- 📝 **Angular Forms**: Form handling with two-way binding
 
 ## Project Structure
+
+```txt
+book-management-system/
+├── src/
+│   ├── app/
+│   │   ├── book/                         # Book Component
+│   │   │   ├── book.component.ts         # Component logic & data management
+│   │   │   ├── book.component.html       # UI template with form and book list
+│   │   │   └── book.component.css        # Component-specific styling
+│   │   │
+│   │   ├── app.component.ts              # Root application component
+│   │   ├── app.component.html            # Main application template
+│   │   ├── app.component.css             # Application-wide styles
+│   │   ├── app.routes.ts                 # Application routing configuration
+│   │   └── app.config.ts                 # Application configuration
+│   │
+│   ├── assets/                           # Static assets (images, icons)
+│   ├── index.html                        # Main HTML entry point
+│   ├── main.ts                           # Application bootstrap file
+│   └── styles.css                        # Global styles
+│
+├── package.json                          # Project dependencies & scripts
+├── tsconfig.json                         # TypeScript configuration
+├── angular.json                          # Angular workspace configuration
+└── [README.md](http://_vscodecontentref_/0)                             # Project documentation (this file)
+```
 
 ## Usage
 
