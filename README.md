@@ -118,12 +118,6 @@ ng test
 - Book details page with additional information
 - User accounts with cloud storage
 
-## Additional Resources
-
-- Angular Documentation
-- TypeScript Documentation
-- Angular CLI Reference
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
