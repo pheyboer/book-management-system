@@ -4,6 +4,7 @@ import { BookComponent } from './book/book.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, BookComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
