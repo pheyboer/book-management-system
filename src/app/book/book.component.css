@@ -62,8 +62,14 @@ button {
 }
 
 button:hover {
-  background-color: #2980b9;
-  transform: translateY(-1px);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1s infinite;
 }
 
 /* Book List Section - Compact */
@@ -109,16 +115,102 @@ tr:hover {
   background-color: #f8f9fa;
 }
 
+/* Add shimmer animation keyframes */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* General button hover shimmer effect */
+button:hover {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1s infinite;
+}
+
+/* Form button specific styles */
+form button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+/* Button column alignment */
+td:last-child {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Actions header alignment - hide text but keep spacing */
+th:last-child {
+  color: transparent;
+  text-align: center;
+}
+
 /* Delete Button - Compact */
 td button {
   background-color: #e74c3c;
   padding: 6px 12px;
   font-size: 14px;
   border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 6px;
 }
 
 td button:hover {
-  background-color: #c0392b;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1s infinite;
+}
+
+/* Button classes with color overrides */
+td button.edit-btn {
+  background-color: #00a0b0;
+  margin-right: 15px;
+}
+
+td button.edit-btn:hover {
+  background-color: #008999;
+}
+
+td button.save-btn {
+  background-color: #2ecc71;
+  margin-right: 15px;
+}
+
+td button.save-btn:hover {
+  background-color: #27ae60;
+}
+
+td button.cancel-btn {
+  background-color: #95a5a6;
+}
+
+td button.cancel-btn:hover {
+  background-color: #7f8c8d;
+}
+
+td input[type="text"] {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 /* Responsive adjustments */

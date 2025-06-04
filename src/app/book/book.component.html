@@ -2,24 +2,24 @@
 <form>
   <label>
     Title:
-    <input type="text" [(ngModel)]="title" name="title">
+    <input type="text" [(ngModel)]="title" name="title" />
   </label>
-  <br>
+  <br />
   <label>
     Author:
-    <input type="text" [(ngModel)]="author" name="author">
+    <input type="text" [(ngModel)]="author" name="author" />
   </label>
-  <br>
+  <br />
   <button type="button" (click)="addBook()">Add Book</button>
 </form>
 
 <!-- Book List Section -->
 <div class="book-list">
   <h2>Book List</h2>
-  
+
   <!-- Message when there are no books -->
   <p *ngIf="books.length === 0">No books available.</p>
-  
+
   <!-- Table of books -->
   <table *ngIf="books.length > 0">
     <thead>
@@ -31,11 +31,35 @@
     </thead>
     <tbody>
       <tr *ngFor="let book of books">
-        <td>{{ book.title }}</td>
-        <td>{{ book.author }}</td>
-        <td>
-          <button type="button" (click)="deleteBook(book.id)">Delete</button>
-        </td>
+        <!-- Display mode -->
+        <ng-container *ngIf="editingBook?.id !== book.id">
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>
+            <button type="button" class="edit-btn" (click)="editBook(book)">
+              Edit
+            </button>
+            <button type="button" (click)="deleteBook(book.id)">Delete</button>
+          </td>
+        </ng-container>
+
+        <!-- Edit mode -->
+        <ng-container *ngIf="editingBook?.id === book.id">
+          <td>
+            <input type="text" [(ngModel)]="editTitle" name="editTitle" />
+          </td>
+          <td>
+            <input type="text" [(ngModel)]="editAuthor" name="editAuthor" />
+          </td>
+          <td>
+            <button type="button" class="save-btn" (click)="saveEdit()">
+              Save
+            </button>
+            <button type="button" class="cancel-btn" (click)="cancelEdit()">
+              Cancel
+            </button>
+          </td>
+        </ng-container>
       </tr>
     </tbody>
   </table>

@@ -3,9 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 interface Book {
-  id: string,
-  title: string,
-  author: string,
+  id: string;
+  title: string;
+  author: string;
 }
 
 @Component({
@@ -19,6 +19,10 @@ export class BookComponent implements OnInit {
   title: string = '';
   author: string = '';
   books: Book[] = [];
+
+  editingBook: Book | null = null;
+  editTitle: string = '';
+  editAuthor: string = '';
 
   ngOnInit() {
     // Load books initally
@@ -36,7 +40,7 @@ export class BookComponent implements OnInit {
     const newBook: Book = {
       id: Date.now().toString(),
       title: this.title,
-      author: this.author
+      author: this.author,
     };
 
     // Get current books from local storage
@@ -55,7 +59,7 @@ export class BookComponent implements OnInit {
     this.title = '';
     this.author = '';
 
-    console.log("Book added to localstorage:", newBook);
+    console.log('Book added to localstorage:', newBook);
   }
 
   getBooks(): Book[] {
@@ -71,7 +75,7 @@ export class BookComponent implements OnInit {
     let books = this.getBooks();
 
     //filter out book with matching ID
-    books = books.filter(book => book.id !== id);
+    books = books.filter((book) => book.id !== id);
 
     //save filtered books back to localstorage
     localStorage.setItem('books', JSON.stringify(books));
@@ -79,6 +83,50 @@ export class BookComponent implements OnInit {
     //update components books array
     this.books = books;
 
-    console.log("Book deleted with ID:", id);
+    console.log('Book deleted with ID:', id);
+  }
+
+  editBook(book: Book): void {
+    this.editingBook = book;
+    this.editTitle = book.title;
+    this.editAuthor = book.author;
+  }
+
+  saveEdit(): void {
+    if (!this.editingBook) return;
+
+    // Validation
+    if (this.editTitle.trim() === '' || this.editAuthor.trim() === '') {
+      return;
+    }
+
+    const books = this.getBooks();
+    const index = books.findIndex((b) => b.id === this.editingBook!.id);
+
+    if (index !== -1) {
+      // Update the book
+      books[index] = {
+        ...this.editingBook,
+        title: this.editTitle,
+        author: this.editAuthor,
+      };
+
+      // Save back to localStorage
+      localStorage.setItem('books', JSON.stringify(books));
+
+      // Update the component's books array
+      this.books = books;
+
+      console.log('Book updated:', books[index]);
+    }
+
+    // Exit edit mode
+    this.cancelEdit();
+  }
+
+  cancelEdit(): void {
+    this.editingBook = null;
+    this.editTitle = '';
+    this.editAuthor = '';
   }
 }
