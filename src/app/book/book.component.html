@@ -12,3 +12,31 @@
   <br>
   <button type="button" (click)="addBook()">Add Book</button>
 </form>
+
+<!-- Book List Section -->
+<div class="book-list">
+  <h2>Book List</h2>
+  
+  <!-- Message when there are no books -->
+  <p *ngIf="books.length === 0">No books available.</p>
+  
+  <!-- Table of books -->
+  <table *ngIf="books.length > 0">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>
+          <button type="button" (click)="deleteBook(book.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

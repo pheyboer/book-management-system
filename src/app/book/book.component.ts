@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 interface Book {
   id: string,
@@ -10,11 +11,11 @@ interface Book {
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './book.component.html',
   styleUrl: './book.component.css',
 })
-export class BookComponent {
+export class BookComponent implements OnInit {
   title: string = '';
   author: string = '';
   books: Book[] = [];
