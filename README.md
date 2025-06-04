@@ -6,6 +6,7 @@ A lightweight, efficient Angular application for managing your book collection. 
 
 - **Add Books**: Create new book entries with title and author information
 - **View Books**: Display your entire collection in a clean, tabular format
+- **Edit Books**: Modify existing book information with inline editing
 - **Delete Books**: Remove books from your collection with a single click
 - **Persistent Storage**: All data is stored in the browser's local storage
 - **Responsive Design**: Works on desktop and mobile devices
@@ -79,6 +80,12 @@ book-management-system/
 
 - All saved books appear in the table below the form
 - Books are automatically loaded from local storage
+
+### Editing a Book:
+
+- Click the "Edit" button next to any book you want to modify
+- Update the title and/or author in the inline form
+- Click "Save" to confirm changes or "Cancel" to discard them
 
 ### Deleting a Book:
 
