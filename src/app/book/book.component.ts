@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-interface book {
+interface Book {
   id: string,
   title: string,
   author: string,
@@ -19,7 +19,7 @@ export class BookComponent {
   author: string = '';
   books: Book[] = [];
 
-  ngOnInIt() {
+  ngOnInit() {
     // Load books initally
     this.books = this.getBooks();
   }
@@ -27,12 +27,12 @@ export class BookComponent {
   addBook() {
     // add logic for adding book
     console.log('book added', { title: this.title, author: this.author });
-    if (this.title.trm() === '' || this.author.trim() === '') {
+    if (this.title.trim() === '' || this.author.trim() === '') {
       return; // Do not add empty books
     }
 
     // Create new book object with unique ID
-    const newBook: Book {
+    const newBook: Book = {
       id: Date.now().toString(),
       title: this.title,
       author: this.author
@@ -45,7 +45,7 @@ export class BookComponent {
     books.push(newBook);
 
     // Save updated books array to localstorage
-    localstorage.setItem('books', JSON.stringify(books));
+    localStorage.setItem('books', JSON.stringify(books));
 
     //update components book array
     this.books = books;
@@ -65,5 +65,19 @@ export class BookComponent {
     return booksJson ? JSON.parse(booksJson) : [];
   }
 
-  
+  deleteBook(id: string) {
+    // get current books
+    let books = this.getBooks();
+
+    //filter out book with matching ID
+    books = books.filter(book => book.id !== id);
+
+    //save filtered books back to localstorage
+    localStorage.setItem('books', JSON.stringify(books));
+
+    //update components books array
+    this.books = books;
+
+    console.log("Book deleted with ID:", id);
+  }
 }
