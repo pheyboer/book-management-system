@@ -1,59 +1,98 @@
-# BookManagementSystem
+# Book Management System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+A lightweight, efficient Angular application for managing your book collection. This single-page application allows users to add, display, and delete books with data persistence through the browser's local storage.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Add Books**: Create new book entries with title and author information
+- **View Books**: Display your entire collection in a clean, tabular format
+- **Delete Books**: Remove books from your collection with a single click
+- **Persistent Storage**: All data is stored in the browser's local storage
+- **Responsive Design**: Works on desktop and mobile devices
+
+## Screenshots
+
+![Book Management System Screenshot](https://example.com/screenshot.png)
+
+## Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/book-management-system.git
+
+# Navigate to the project directory
+cd book-management-system
+
+# Install dependencies
+npm install
+
+# Start the development server
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open your browser and navigate to http://localhost:4200/.
 
-## Code scaffolding
+## Technologies Used
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Angular 19.2.12: Front-end framework
+- TypeScript: Programming language
+- HTML/CSS: Structure and styling
+- Local Storage API: Data persistence
+- Angular Forms: Form handling with two-way binding
 
-```bash
-ng generate component component-name
-```
+## Project Structure
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Usage
 
-```bash
-ng generate --help
-```
+### Adding a Book:
 
-## Building
+- Enter the book title and author in the form fields
+- Click "Add Book" to save it to your collection
+
+### Viewing Books:
+
+- All saved books appear in the table below the form
+- Books are automatically loaded from local storage
+
+### Deleting a Book:
+
+- Click the "Delete" button next to any book to remove it
+
+## Development Commands
+
+### Building
 
 To build the project run:
 
-```bash
+```
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This will compile your project and store the build artifacts in the dist/ directory.
 
-## Running unit tests
+### Running Unit Tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+To execute unit tests with Karma, use:
 
-```bash
+```
 ng test
 ```
 
-## Running end-to-end tests
+## Future Enhancements
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Book categorization and filtering
+- Search functionality
+- Book details page with additional information
+- User accounts with cloud storage
 
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular Documentation
+- TypeScript Documentation
+- Angular CLI Reference
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Created with ❤️ using Angular 19 - June 2025
