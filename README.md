@@ -12,7 +12,7 @@ A lightweight, efficient Angular application for managing your book collection. 
 
 ## Screenshots
 
-![Book Management System Screenshot](https://example.com/screenshot.png)
+![Book Management System Screenshot](https://github.com/pheyboer/book-management-system/blob/main/public/BookManangementSystemAngular.jpg)
 
 ## Installation
 
