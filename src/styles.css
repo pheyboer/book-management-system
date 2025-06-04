@@ -1,10 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
-body {
+/* Global styles */
+* {
   margin: 0;
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  color: #2c3e50;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #1a2a3a;
+  letter-spacing: -0.5px;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }

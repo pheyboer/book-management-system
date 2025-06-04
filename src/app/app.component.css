@@ -1,12 +1,25 @@
 :host {
   display: block;
-  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 h1 {
   text-align: center;
-  color: #333;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #eee;
+  font-size: 2.8rem;
+  color: #1a2a3a;
+  margin: 2rem 0 3rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  :host {
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
 }
